@@ -1,0 +1,8 @@
+{
+  "name": "ubfakeclient",
+  "app_id": "7e2cfd45",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
