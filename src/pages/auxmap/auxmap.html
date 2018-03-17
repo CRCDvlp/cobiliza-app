@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>{{ accion }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button block color="dark" (click)="savePlace()">
+            <ion-icon name="add-circle"></ion-icon>&nbsp;Guardar
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button block color="dark" (click)="savePlace()">
+            <ion-icon name="settings"></ion-icon>&nbsp;Datos
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="selectUbicacion($event)" [zoom]="17">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Tus ubicaciones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button block color="dark"
+  (click)="modalUbicacion()">Nueva ubicación</button>
+  <ion-list>
+      <ion-item-sliding *ngFor="let place of places; let i = index">
+        <ion-item>
+          <h2>{{ place.nombre }}</h2>
+          <p>{{ place.descriocion }}</p>
+          <ion-icon item-right></ion-icon>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="danger"
+            (click)="elimminarPlace(i)">
+            <ion-icon name="close"></ion-icon>
+            Eliminar
+          </button>
+          <button ion-button color="dakr"
+            (click)="changePlace(i)">
+            <ion-icon name="pin"></ion-icon>
+            Cambiar
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>

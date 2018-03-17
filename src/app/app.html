@@ -1,1 +1,28 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="dark">
+            <ion-title>{{ usuario }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="navegarA(home)">
+                Inicio
+            </button>
+            <button ion-item (click)="navegarA(userInfo)">
+                Información de usuario
+            </button>
+            <button ion-item (click)="navegarA(viajar)">
+                Viajar
+            </button>
+            <button ion-item (click)="navegarA(places)">
+                Tus ubicaciones
+            </button>
+            <button ion-item (click)="cerrarSesion()">
+                Salir
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

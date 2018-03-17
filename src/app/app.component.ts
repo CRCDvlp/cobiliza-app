@@ -1,22 +1,42 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { PlacesPage } from '../pages/places/places';
+import { RegisterPage } from '../pages/register/register';
+import { UserinfoPage } from '../pages/userinfo/userinfo';
+import { ViajarPage } from '../pages/viajar/viajar';
+
+import { userData } from '../data/data.user';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  
+  usuario:string;
   rootPage:any = HomePage;
+  home:any = HomePage;
+  login: any = LoginPage;
+  places:any = PlacesPage;
+  register:any = RegisterPage;
+  userInfo:any = UserinfoPage;
+  viajar:any = ViajarPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    this.usuario = userData.datos.nombre;
+  }
+
+  navegarA(pagina:any){
+    this.rootPage = pagina;
+    this.menuCtrl.close();
   }
 }
 
