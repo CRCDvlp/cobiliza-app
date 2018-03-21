@@ -12,6 +12,7 @@ import { RegisterPage } from '../pages/register/register';
 import { UserinfoPage } from '../pages/userinfo/userinfo';
 import { ViajarPage } from '../pages/viajar/viajar';
 import { AuxmapPage } from '../pages/auxmap/auxmap';
+import { ProgramadosPage } from '../pages/programados/programados';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -26,7 +27,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     RegisterPage,
     UserinfoPage,
     ViajarPage,
-    AuxmapPage
+    AuxmapPage,
+    ProgramadosPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     RegisterPage,
     UserinfoPage,
     ViajarPage,
-    AuxmapPage
+    AuxmapPage,
+    ProgramadosPage
   ],
   providers: [
     StatusBar,

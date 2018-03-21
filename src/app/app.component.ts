@@ -9,6 +9,7 @@ import { PlacesPage } from '../pages/places/places';
 import { RegisterPage } from '../pages/register/register';
 import { UserinfoPage } from '../pages/userinfo/userinfo';
 import { ViajarPage } from '../pages/viajar/viajar';
+import { ProgramadosPage } from '../pages/programados/programados';
 
 import { userData } from '../data/data.user';
 
@@ -25,6 +26,7 @@ export class MyApp {
   register:any = RegisterPage;
   userInfo:any = UserinfoPage;
   viajar:any = ViajarPage;
+  programados:any = ProgramadosPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {

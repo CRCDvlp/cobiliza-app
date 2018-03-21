@@ -55,16 +55,32 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list no-lines>
-        <ion-item>
-          <h2>Efectivo</h2>
-          <p>Pago en efectivo</p>
-          <ion-icon name="cash" item-end></ion-icon>
-        </ion-item>
-        <ion-item>
-          <h2>Tarjeta</h2>
-          <p>XXXX-XXXX-XXXX-0200</p>
-          <ion-icon name="card" item-end></ion-icon>
-        </ion-item>
+        <ion-item-sliding>
+          <ion-item>
+            <h2>Efectivo</h2>
+            <p>Pago en efectivo</p>
+            <ion-icon name="cash" item-end></ion-icon>
+          </ion-item>
+          <ion-item-options slide="left">
+            <button ion-button color="danger">
+              <ion-icon name="close"></ion-icon>
+              Eliminar
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item-sliding>
+          <ion-item>
+            <h2>Tarjeta</h2>
+            <p>XXXX-XXXX-XXXX-0200</p>
+            <ion-icon name="card" item-end></ion-icon>
+          </ion-item>
+          <ion-item-options slide="left">
+            <button ion-button color="danger">
+              <ion-icon name="close"></ion-icon>
+              Eliminar
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
       </ion-list>
       <p text-right>
         <button ion-button color="dark">Añadir</button>
