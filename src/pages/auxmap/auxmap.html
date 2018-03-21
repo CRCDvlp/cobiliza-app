@@ -2,6 +2,9 @@
   <ion-navbar color="dark">
     <ion-title>{{ accion }}</ion-title>
     <ion-buttons end>
+      <button ion-button icon-only (click)="locatePhone()">
+        <ion-icon name="locate"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="dismissModal()">
         <ion-icon name="close"></ion-icon>
       </button>
