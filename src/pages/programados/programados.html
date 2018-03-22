@@ -1,8 +1,185 @@
 <ion-header>
   <ion-navbar color="dark">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Viajes programados</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <h1 text-center>Programa tus viajes para ahorrar tiempo</h1>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Programar viaje
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label floating>Nombre</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha</ion-label>
+          <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month" cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dias del mes</ion-label>
+          <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mensual</ion-label>
+          <ion-select multiple="true" cancelText="Cancelar" okText="OK">
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+            <ion-option value="7">7</ion-option>
+            <ion-option value="8">8</ion-option>
+            <ion-option value="9">9</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12">12</ion-option>
+            <ion-option value="13">13</ion-option>
+            <ion-option value="14">14</ion-option>
+            <ion-option value="15">15</ion-option>
+            <ion-option value="16">16</ion-option>
+            <ion-option value="17">17</ion-option>
+            <ion-option value="18">18</ion-option>
+            <ion-option value="19">19</ion-option>
+            <ion-option value="20">20</ion-option>
+            <ion-option value="21">21</ion-option>
+            <ion-option value="22">22</ion-option>
+            <ion-option value="23">23</ion-option>
+            <ion-option value="24">24</ion-option>
+            <ion-option value="25">25</ion-option>
+            <ion-option value="26">26</ion-option>
+            <ion-option value="27">27</ion-option>
+            <ion-option value="28">28</ion-option>
+            <ion-option value="29">29</ion-option>
+            <ion-option value="30">30</ion-option>
+            <ion-option value="31">31</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Semanal</ion-label>
+          <ion-checkbox color="dark" checked="false"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dias</ion-label>
+          <ion-select multiple="true" cancelText="Cancelar" okText="OK">
+            <ion-option value="lunes" selected="true">Lunes</ion-option>
+            <ion-option value="martes" selected="true">Martes</ion-option>
+            <ion-option value="miercoles" selected="true">Miercoles</ion-option>
+            <ion-option value="Jueves" selected="true">Jueves</ion-option>
+            <ion-option value="viernes" selected="true">Viernes</ion-option>
+            <ion-option value="sabado" selected="true">Sabado</ion-option>
+            <ion-option value="domingo" selected="true">Domingo</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hora</ion-label>
+          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts" cancelText="Cancelar" doneText="Hecho"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Origen</ion-label>
+          <ion-select cancelText="Cancelar" okText="OK">
+            <ion-option value="casa">Casa</ion-option>
+            <ion-option value="oficina">Oficina</ion-option>
+            <ion-option value="casapadres">Casa Padres</ion-option>
+            <ion-option value="supermercado">Supermercado</ion-option>
+            <ion-option value="gimnasio">Gimnasio</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Destino</ion-label>
+          <ion-select cancelText="Cancelar" okText="OK">
+            <ion-option value="casa">Casa</ion-option>
+            <ion-option value="oficina">Oficina</ion-option>
+            <ion-option value="casapadres">Casa Padres</ion-option>
+            <ion-option value="supermercado">Supermercado</ion-option>
+            <ion-option value="gimnasio">Gimnasio</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <p text-right>
+        <button ion-button color="dark">Guardar</button>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <h2 padding>Viajes programados</h2>
+  <ion-list no-lines>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Compras (Casa <ion-icon name="arrow-round-forward"></ion-icon> Supermercado)</h2>
+        <p>Fecha: Mar 30 2018</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger">
+          <ion-icon name="close"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Viaje al trabajo (Casa <ion-icon name="arrow-round-forward"></ion-icon> Trabajo)</h2>
+        <p>Semanal: Lunes, Martes, Miercoles, Jueves, Viernes</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger">
+          <ion-icon name="close"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Visita a mis padres (Casa <ion-icon name="arrow-round-forward"></ion-icon> Casa Padres)</h2>
+        <p>Semanal: Domingo</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger">
+          <ion-icon name="close"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Cena mensual (Oficina <ion-icon name="arrow-round-forward"></ion-icon> Casa Padres)</h2>
+        <p>Mensual: 21</p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+        <button ion-button color="danger">
+          <ion-icon name="close"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
