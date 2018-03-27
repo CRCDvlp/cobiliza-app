@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
+import firebase from 'firebase';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,8 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+    menu.enable(true);
   }
 
 }

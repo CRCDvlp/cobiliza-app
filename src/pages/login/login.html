@@ -1,12 +1,25 @@
 <ion-header>
   <ion-navbar color="dark">
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <h4 text-center>Inicia sesión y comienza a viajar</h4>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="cont"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block color="dark" (click)="login()">
+    Iniciar sesion
+  </button>
+  <button ion-button block color="default" (click)="register()">
+    Registrarse
+  </button>
 </ion-content>

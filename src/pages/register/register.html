@@ -1,13 +1,35 @@
 <ion-header>
+
   <ion-navbar color="dark">
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>register</ion-title>
+    <ion-navbar>
+      <ion-title>Registro</ion-title>
+    </ion-navbar>
   </ion-navbar>
+
 </ion-header>
 
 
 <ion-content padding>
-
+  <h4 text-center>Registrate para poder viajar</h4>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Confirmar email</ion-label>
+      <ion-input type="text" [(ngModel)]="emailc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="pass"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Confirmar contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="passc"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block color="dark" (click)="register()">
+    Registrarse
+  </button>
 </ion-content>

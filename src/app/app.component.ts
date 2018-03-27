@@ -13,13 +13,16 @@ import { ProgramadosPage } from '../pages/programados/programados';
 
 import { userData } from '../data/data.user';
 
+import firebase from 'firebase';
+import { fireConfig } from '../config/firebase.config';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   
   usuario:string;
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
   home:any = HomePage;
   login: any = LoginPage;
   places:any = PlacesPage;
@@ -27,6 +30,7 @@ export class MyApp {
   userInfo:any = UserinfoPage;
   viajar:any = ViajarPage;
   programados:any = ProgramadosPage;
+  fireCfg: any = fireConfig;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {
@@ -34,6 +38,7 @@ export class MyApp {
       splashScreen.hide();
     });
     this.usuario = userData.datos.nombre;
+    firebase.initializeApp(this.fireCfg);
   }
 
   navegarA(pagina:any){

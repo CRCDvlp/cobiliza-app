@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,57 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email:string;
+  emailc:string;
+  pass:string;
+  passc:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }
 
+  register(){
+    if(this.validate()){
+      firebase.auth().createUserAndRetrieveDataWithEmailAndPassword( this.email, this.pass)
+      .then( response => {
+        let alert = this.alertCtrl.create({
+          title: "Registro exitoso",
+          message: "Has sido registrado exitosamente, inicia sesion para continuar"
+        });
+        alert.present().then(info =>{
+          
+        });
+      }).catch( e => {
+        let alert = this.alertCtrl.create({
+          title: "Error",
+          message: e
+        });
+        alert.present();
+      });
+    }else{
+      let alert = this.alertCtrl.create({
+        title: "Error",
+        message: this.valMessage()
+      });
+      alert.present();
+    }
+  }
+
+  validate(){
+    return this.email == this.emailc && this.pass == this.passc;
+  }
+
+  valMessage(){
+    let mensaje:string;
+    if(this.email != this.emailc){
+      mensaje = "Los email no corresponden entre si";
+    }
+    if(this.pass != this.passc){
+      mensaje = "Los password no coninciden";
+    }
+    return mensaje;
+  }
 }
