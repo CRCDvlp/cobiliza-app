@@ -40,7 +40,7 @@ import { Geolocation } from '@ionic-native/geolocation';
       pageTransition: 'ios-transition'
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDprIqedLL_wKnkfRHhxppRSuBf2-aXZGg'
+      apiKey: 'AIzaSyCVpkdJmYIJybCpdqFGtAK7zJtBTuUQloY'
     })
   ],
   bootstrap: [IonicApp],

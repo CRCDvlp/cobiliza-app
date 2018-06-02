@@ -1,8 +1,8 @@
 export const fireConfig = {
-    apiKey: "AIzaSyBlfw1IA5NzTindR7U3dwLaoSj4kHBelkg",
-    authDomain: "uberfake-zzroot.firebaseapp.com",
-    databaseURL: "https://uberfake-zzroot.firebaseio.com",
-    projectId: "uberfake-zzroot",
-    storageBucket: "uberfake-zzroot.appspot.com",
-    messagingSenderId: "975357053119"
-  };
+  apiKey: "AIzaSyCwXW-Em503hvj-u2zv2Och82n4wKyfTAw",
+  authDomain: "ecobiliza.firebaseapp.com",
+  databaseURL: "https://ecobiliza.firebaseio.com",
+  projectId: "ecobiliza",
+  storageBucket: "ecobiliza.appspot.com",
+  messagingSenderId: "1054110425083"
+};

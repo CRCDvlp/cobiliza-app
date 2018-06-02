@@ -25,6 +25,11 @@ export class RegisterPage {
     if(this.validate()){
       firebase.auth().createUserAndRetrieveDataWithEmailAndPassword( this.email, this.pass)
       .then( response => {
+        let nombre = firebase.auth().currentUser.uid;
+        let objeto = {
+           nombre : 'alguna cosa'
+        };
+        firebase.database().ref('userInfo/').set(objeto);
         let alert = this.alertCtrl.create({
           title: "Registro exitoso",
           message: "Has sido registrado exitosamente, inicia sesion para continuar"

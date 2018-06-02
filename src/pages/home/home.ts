@@ -10,6 +10,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
     menu.enable(true);
+    console.log('userInfo/' + firebase.auth().currentUser.uid);
+    let userInfo:any = firebase.database().ref('userinfo/' + firebase.auth().currentUser.uid);
   }
 
 }
